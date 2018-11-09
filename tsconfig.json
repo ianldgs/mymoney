@@ -1,11 +1,17 @@
 {
   "compilerOptions": {
+	"lib": [
+		"es2015",
+		"dom",
+	],
     "target": "es5",
     "allowJs": true,
     "skipLibCheck": false,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
+	"strictNullChecks": true,
+	"experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",
     "moduleResolution": "node",
@@ -14,6 +20,9 @@
     "noEmit": true,
     "jsx": "preserve"
   },
+  "typeRoots": [
+    "node_modules/@types",
+  ],
   "include": [
     "src"
   ]
