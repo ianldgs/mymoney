@@ -17,7 +17,16 @@ export type MenuItemType = SFC<IMenuItemProps&AnchorHTMLAttributes<HTMLAnchorEle
 const DisconnectedMenuItem: MenuItemType = props => {
   const { navigateTo: _, ...rest } = props
 
-  return <a {...rest} onClick={e => { e.preventDefault(); props.navigateTo!(props.href) }} />
+  return (
+    <a
+      {...rest}
+      className="menu-item"
+      onClick={e => {
+        e.preventDefault()
+        props.navigateTo!(props.href)
+      }}
+    />
+  )
 }
 
 export const MenuItem = connect<void>(null, { navigateTo })(DisconnectedMenuItem)
@@ -29,6 +38,7 @@ export interface IMenuItemsProps {
 const MenuItems: SFC<IMenuItemsProps> = () => (
   <nav className="menu-items">
     <MenuItem href="/expenses">Gastos</MenuItem>
+    •
     <MenuItem href="/revenues">Receitas</MenuItem>
   </nav>
 )

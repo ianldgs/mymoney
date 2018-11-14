@@ -1,0 +1,10 @@
+.menu-items {
+	font-size: 14px;
+}
+
+.menu-item {
+	margin: 0 4px;
+	padding: 4px 2px;
+	color: #0000ff;
+	text-decoration: none;
+}

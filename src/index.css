@@ -8,7 +8,25 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+	margin-top: 30px;
+}
+
+* {
+	outline: none;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h1 {
+	text-align: center;
+}
+
+.floating-top {
+	position: fixed;
+	left: 0;
+	top: 0;
 }

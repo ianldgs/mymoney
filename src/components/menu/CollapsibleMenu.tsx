@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import './CollapsibleMenu.css'
 import { open, close } from '../../actions/menu'
-import FloatingMenuButton from './FloatingMenuButton'
+import MenuButton from './MenuButton'
 import MenuItems from './MenuItems'
 
 interface IProps {
@@ -20,10 +20,10 @@ const mapStateToProps = (state: any) => ({
 export default class CollapsibleMenu extends Component<IProps> {
   public render() {
     return (
-      <div className="collapsible-menu">
+      <div className="collapsible-menu floating-top">
         {
           !this.props.opened
-          && <FloatingMenuButton onClick={ () => this.props.open!() }>Menu</FloatingMenuButton>
+          && <MenuButton onClick={ () => this.props.open!() }>Menu</MenuButton>
         }
         {
           this.props.opened

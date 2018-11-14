@@ -11,9 +11,9 @@ import CollapsibleMenu from './components/menu/CollapsibleMenu'
 export default class App extends Component {
   public render() {
     return (
-      <div className="App">
-        {/* <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+      <div className="app">
+        {/* <header className="app-header">
+          <img src={logo} className="app-logo" alt="logo" />
           <p>
             Edit <code>src/App.tsx</code> and save to reload.
           </p>
