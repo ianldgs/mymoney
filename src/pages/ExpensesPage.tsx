@@ -5,7 +5,7 @@ export default class ExpensesPage extends Component {
   public render() {
     return (
       <section>
-        <h1>Despesas</h1>
+        <h1>Gastos</h1>
       </section>
     )
   }
