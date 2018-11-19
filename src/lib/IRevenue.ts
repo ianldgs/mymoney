@@ -1,6 +1,5 @@
-export default interface IRevenue {
-  value: number,
-  creator: string,
-  receivedAt: Date,
-  tags: string[],
+import IMoneyVariation from './IMoneyVariation'
+
+export default interface IRevenue extends IMoneyVariation {
+  readonly origin: string,
 }

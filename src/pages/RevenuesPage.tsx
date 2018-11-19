@@ -5,7 +5,7 @@ export default class RevenuesPage extends Component {
   public render() {
     return (
       <section>
-        <h1>Receitas</h1>
+        <h1>Receitas:</h1>
       </section>
     )
   }

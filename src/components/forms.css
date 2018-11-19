@@ -1,0 +1,11 @@
+.wide-field {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wide-field > input {
+	padding: 8px 4px;
+	border: none;
+    background-color: #f7f7f7;
+}

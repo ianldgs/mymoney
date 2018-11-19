@@ -1,7 +1,5 @@
-export default interface IExpense {
-  value: number,
-  creator: string,
-  inBenefitOf: string,
-  spentAt: Date,
-  tags: string[],
+import IMoneyVariation from './IMoneyVariation'
+
+export default interface IExpense extends IMoneyVariation {
+  readonly inBenefitOf?: string,
 }

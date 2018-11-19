@@ -28,6 +28,20 @@ export default (state: IMoneyState|undefined, action: AnyAction): IMoneyState =>
           revenues: [action.payload, ...state.revenues],
         },
       }
+    case 'get_expenses':
+      return {
+        ...state,
+        ...{
+          expenses: action.payload,
+        },
+      }
+    case 'get_revenues':
+      return {
+        ...state,
+        ...{
+          revenues: action.payload,
+        },
+      }
     default:
       return state
   }
