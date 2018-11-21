@@ -4,7 +4,8 @@ import { connect } from 'react-redux'
 import './ExpensesForm.css'
 import { spend } from '../../actions/money'
 import IExpense from '../../lib/IExpense'
-import { WideField } from '../forms'
+import * as tags from '../../lib/tags'
+import { Form, WideField, SubmitButton } from '../forms'
 
 export interface IExpensesFormProps {
   spend?: (expense: IExpense) => void,
@@ -12,13 +13,6 @@ export interface IExpensesFormProps {
 
 @(connect(null, { spend }) as any)
 export default class ExpensesForm extends Component<IExpensesFormProps, Partial<IExpense>> {
-  private parseTags(tags: string): string[] {
-    return tags
-      .toLowerCase()
-      .split(/[\s,;\/]+/)
-      .filter(c => !!c)
-  }
-
   private handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
 
@@ -34,7 +28,7 @@ export default class ExpensesForm extends Component<IExpensesFormProps, Partial<
 
   public render() {
     return (
-      <form className="expenses-form" onSubmit={e => this.handleSubmit(e)}>
+      <Form className="expenses-form" onSubmit={e => this.handleSubmit(e)}>
         <WideField
           label="Título:"
           type="text"
@@ -85,14 +79,14 @@ export default class ExpensesForm extends Component<IExpensesFormProps, Partial<
         <WideField
           label="Tags:"
           type="text"
-          required
+          placeholder="Ex: tag1, tag2, tag3"
           onChange={e => {
-            this.setState({ tags: this.parseTags(e.target.value) })
+            this.setState({ tags: tags.parse(e.target.value) })
           }}
         />
 
-        <button className="btn-submit" type="submit">Gastar</button>
-      </form>
+        <SubmitButton>Gastar</SubmitButton>
+      </Form>
     )
   }
 }

@@ -36,11 +36,16 @@ export const receive = (revenue: IRevenue) => async (dispatch: Dispatch) => {
   })
 }
 
-export const getRevenues = () => async (dispatch: Dispatch) => {
-  const expenses = jsonStorage.local.get('revenues')
+export const fetchRevenues = () => async (dispatch: Dispatch) => {
+  const revenues: IRevenue[] = jsonStorage.local.get('revenues') || []
+
+  const payload = revenues.map(revenue => ({
+    ...revenue,
+    createdAt: new Date(revenue.createdAt),
+  }))
 
   dispatch({
     type: 'get_revenues',
-    payload: expenses,
+    payload,
   })
 }

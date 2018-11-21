@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import './ExpenseList.css'
+import './ExpensesList.css'
 import IRootState from '../../lib/IRootState'
 import IExpense from '../../lib/IExpense'
 import Expense from './Expense'
@@ -30,7 +30,7 @@ export default class ExpensesList extends Component<IExpensesListProps> {
     }
 
     return (
-      <ul className="expense-list">
+      <ul className="expenses-list">
         { this.props.expenses!.map((expense, i) => (
             <li key={i}><Expense {...{expense}} /></li>
         )) }
